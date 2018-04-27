@@ -6,17 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/game.css">
-    <title>Document</title>
+    <title>SLAP! Game</title>
 </head>
 <body>
+    <header>
+        <h4><span>Health Check:<span id="healthNum">0</span></span></h4>
+        <h4><span>Name:<span id="nameID">z</span></span></h4>
+        <h4><span>Hits:<span id="hithNum">0</span></span></h4>
+    </header>
  <div>
      <img class="crazy-pic" src="http://new-pakistan.com/wp-content/uploads/2017/08/maxresdefault.jpg" alt="">
  </div>
   
  <footer>
-     <button type="button" class="btn btn-primary">SLAP!</button>
+     <button type="button" onclick="slap()" class="btn btn-primary">SLAP!</button>
+     <button type="button" onclick="punch()" class="btn btn-primary">Punch!</button>
+     <button type="button" onclick="kick()" class="btn btn-primary">Kick!</button>
  </footer>
 
-    <script>"assets/scripts/game.js"</script>
+    <script src="assets/scripts/game.js"></script>
 </body>
 </html>
