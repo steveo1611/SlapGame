@@ -46,10 +46,19 @@ function giveItemToTarget() {
     //bug bug: hard coded shield for now
     //BUG BUG: this could cause some issues later: KEEP EYE ON!!!!
        endTarget.items.push(items.shield)
+       //bug bug: temp entry
+    //endTarget.items.push(items.rock)
+       //endTarget.items.push(items.fist)
 
     }
     
-giveItemToTarget()
+function addMods(){
+    var modTotal = 0
+    for (let i = 0; i < endTarget.items.length; i++) {
+        return modTotal += endTarget.items[i].modifier  
+    }
+
+}
 
 //Constructs
 function Target (name, health){
@@ -66,9 +75,7 @@ function Item(name, modifier, description){
 }
 
 
-
-
-
-
+//giveItemToTarget()
+//addMods()
 
 update()
