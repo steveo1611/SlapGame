@@ -1,66 +1,63 @@
-// var health = 100
-// var name1 = "wacky"
-// var hits = 0
+// Version:1
 
-
+// creates Target details: uses a constructor to setup all the targets attrubutes.
 var endTarget = new Target('Wacky', 100)
 
+//list of items that can be used to "enhance" attacks
 var items = {
     shield: new Item('Shield', 0.3, "This is an awesome shield!"),
     fist: new Item('fist of thunder', 10, 'will give +10 damage'),
     rock: new Item('Rock', 3, 'just a simple but hard rock')
 }
 
-
+// function for the first "type of attack" button: initially "slap"
+// also updates the health and the hit totals
 function slap() {
-    // debugger
-    addMods()
-    endTarget.health -= ((modTotal) + 1)  // could also use modtotal() /??????
-    console.log((modTotal) + 1)
+    endTarget.health -= (addMods() + 1)
+    //console.log(addMods() + 1)
     endTarget.hits += 1
-    // alert(health)
     update()
 }
 
+// function for the first "type of attack" button: initially "punch"
+// also updates the health and the hit totals
 function punch() {
     addMods()
-    endTarget.health -= (modTotal + 5)
-    console.log((modTotal) + 5)
+    endTarget.health -= (addMods() + 5)
+    //console.log((addMods()) + 5)
     endTarget.hits += 1
-    //   alert(health)
     update()
 }
 
+// function for the third "type of attack" button: initially "kick"
+// also updates the health and the hit totals
 function kick() {
-    endTarget.health -= (modTotal + 10)
-    console.log((modTotal) + 10)
+    endTarget.health -= (addMods() + 10)
+    //console.log(addMods() + 10)
     endTarget.hits += 1
-    // alert(health)
     update()
 }
 
 
+//function to update the health info on web page.
 function update() {
-    // @ts-ignore
     document.getElementById('healthNum').innerText = endTarget.health
-    // @ts-ignore
     document.getElementById('hithNum').innerText = endTarget.hits
     document.getElementById('nameID').innerText = endTarget.name
 }
 
-function giveItemToTarget(item) {
-    //bug bug: hard coded shield for now
-    //BUG BUG: this could cause some issues later: KEEP EYE ON!!!!
-    debugger
-    endTarget.items.push(items.item)
-    //bug bug: temp entry
-  //  endTarget.items.push(items.rock)
-  //  endTarget.items.push(items.fist)
-
+// function to add items to be used to modify attack numbers.
+//var shield = ''
+function giveItemToTarget(atItem) {
+   endTarget.items.push(items[atItem])
+   
+    
 }
-var modTotal = 0
+
+// function to total up the attack modifiers
 function addMods() {
-    modTotal = 0
+    var modTotal = 0
+ //   debugger
     for (let i = 0; i < endTarget.items.length; i++) {
         let mod = endTarget.items[i];
         modTotal += mod.modifier
@@ -84,11 +81,5 @@ function Item(name, modifier, description) {
     this.description = description;
 }
 
-
-//giveItemToTarget(rock)
-//addMods()
-
-// bug bug can use this to extract info from addmon funciton
-//var results = addMods()   then push results to something....
 
 update()
