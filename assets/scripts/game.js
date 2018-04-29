@@ -76,6 +76,12 @@ function addMods() {
     return modTotal
 
 }
+// function to reset game to starting defaults
+function reset(){
+   endTarget = new Target('Wacky', 10)  //bug bug when I update this on line 4 I will need to fix this also 
+   document.getElementById('win').innerText = ''
+    update()
+}
 
 //Constructs
 function Target(name, health) {
@@ -90,5 +96,7 @@ function Item(name, modifier, description) {
     this.modifier = modifier;
     this.description = description;
 }
+
+
 
 update()

@@ -14,6 +14,26 @@
 </head>
 
 <body>
+    <nav class="navbar fixed-top navbar-expand navbar-light bg-light">
+        <a class="navbar-brand" href="#">SlapIT</a>
+        <button type="button" onClick="reset()" class="reset btn btn-primary">RESET</button>
+        <!--
+<button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"></button> <!-- do I need all of this??-->
+        <!--  <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Game Reset</a>
+                </li>
+            </ul>
+       
+   </div>
+-->
+    </nav>
     <section>
         <header class="container title">
             <h1> Welcome to the</h1>
@@ -48,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="att-choice col-offset-2">
-                    <div class="d-flex flex-column justify-content-between align-items-center" id="attack-type">
+                    <div class="d-flex flex-column justify-content-between" id="attack-type">
                         <button type="button" onclick="slap()" class="attack-type btn btn-primary">SLAP!</button>
                         <button type="button" onclick="punch()" class="attack-type btn btn-primary">Punch!</button>
                         <button type="button" onclick="kick()" class="attack-type btn btn-primary">Kick!</button>
@@ -60,7 +80,7 @@
                     </div>
                 </div>
                 <div class="att-choice col-offset-2">
-                    <div class="d-flex flex-column justify-content-between align-items-center" id="items">
+                    <div class="d-flex flex-column justify-content-between" id="items">
                         <button type="button" onclick="giveItemToTarget('shield')" class="attack-help btn btn-primary">Shield</button>
                         <button type="button" onclick="giveItemToTarget('rock')" class="attack-help btn btn-primary">Rock</button>
                         <button type="button" onclick="giveItemToTarget('fist')" class="attack-help btn btn-primary">fist</button>
@@ -71,6 +91,7 @@
     </section>
     <section>
         <footer>
+            <button type="button" onClick="reset()" class="reset btn btn-primary">RESET</button>
             <!-- <button type="button" onclick="slap()" class="btn btn-primary">SLAP!</button>
             <button type="button" onclick="punch()" class="btn btn-primary">Punch!</button>
             <button type="button" onclick="kick()" class="btn btn-primary">Kick!</button> -->
