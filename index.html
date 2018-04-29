@@ -69,7 +69,8 @@
         <div class="container">
             <div class="row">
                 <div class="att-choice col-offset-2">
-                    <div class="d-flex flex-column justify-content-between" id="attack-type">
+                    <div class="but-box d-flex flex-column justify-content-between" id="attackType">
+                        <h3 style="color:white">Type of Attack:</h3>
                         <button type="button" onclick="slap()" class="attack-type btn btn-primary">SLAP!</button>
                         <button type="button" onclick="punch()" class="attack-type btn btn-primary">Punch!</button>
                         <button type="button" onclick="kick()" class="attack-type btn btn-primary">Kick!</button>
@@ -77,14 +78,15 @@
                 </div>
                 <div class="col">
                     <div class="target-pic" style="text-align:center">
-                        <img class="crazy-pic" src="assets/images/wackedOut.jpg" alt="">
+                        <img id="tar-pic" class="crazy-pic" src="assets/images/wackedOut.jpg" alt="">
                     </div>
                 </div>
                 <div class="att-choice col-offset-2">
-                    <div class="d-flex flex-column justify-content-between" id="items">
+                    <div class="but-box d-flex flex-column justify-content-between" id="items">
+                            <h3 style="color:white">Type of Attack:</h3>
                         <button type="button" onclick="giveItemToTarget('shield')" class="attack-help btn btn-primary">Shield</button>
                         <button type="button" onclick="giveItemToTarget('rock')" class="attack-help btn btn-primary">Rock</button>
-                        <button type="button" onclick="giveItemToTarget('fist')" class="attack-help btn btn-primary">fist</button>
+                        <button type="button" onclick="giveItemToTarget('fist')" class="attack-help btn btn-primary">Fist</button>
                     </div>
                 </div>
             </div>
@@ -92,7 +94,7 @@
     </section>
     <section>
         <footer>
-            <button type="button" onClick="reset()" class="reset btn btn-primary">RESET</button>
+            <!-- <button type="button" onClick="reset()" class="reset btn btn-primary">RESET</button> -->
             <!-- <button type="button" onclick="slap()" class="btn btn-primary">SLAP!</button>
             <button type="button" onclick="punch()" class="btn btn-primary">Punch!</button>
             <button type="button" onclick="kick()" class="btn btn-primary">Kick!</button> -->

@@ -48,7 +48,7 @@ function checkIfWin(){
 function win(){
 //    var winTitle = "<h1 class='wintext'> CONGRATULATIONS YOU HAVE WON!!!</h1>"
     document.getElementById('win').innerText = 'CONGRATULATIONS YOU HAVE WON!!!'
-
+    document.getElementById('tar-pic').src = 'assets/images/wackedOut-lost.jpg'
 }
 //function to update the health info on web page.
 function update() {
@@ -80,6 +80,7 @@ function addMods() {
 function reset(){
    endTarget = new Target('Wacky', 100)  //bug bug: when I update this on line 4 I will need to fix this also 
    document.getElementById('win').innerText = ''
+   document.getElementById('tar-pic').src = 'assets/images/wackedOut.jpg'
     update()
 }
 
