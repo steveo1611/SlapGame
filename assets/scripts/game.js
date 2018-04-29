@@ -1,7 +1,7 @@
 // Version:1
 
 // creates Target details: uses a constructor to setup all the targets attrubutes.
-var endTarget = new Target('Wacky', 100)
+var endTarget = new Target('Wacky', 10)
 
 //list of items that can be used to "enhance" attacks
 var items = {
@@ -14,8 +14,8 @@ var items = {
 // also updates the health and the hit totals
 function slap() {
     endTarget.health -= (addMods() + 1)
-    //console.log(addMods() + 1)
     endTarget.hits += 1
+    checkIfWin()
     update()
 }
 
@@ -24,8 +24,8 @@ function slap() {
 function punch() {
     addMods()
     endTarget.health -= (addMods() + 5)
-    //console.log((addMods()) + 5)
     endTarget.hits += 1
+    checkIfWin()
     update()
 }
 
@@ -33,12 +33,23 @@ function punch() {
 // also updates the health and the hit totals
 function kick() {
     endTarget.health -= (addMods() + 10)
-    //console.log(addMods() + 10)
     endTarget.hits += 1
+    checkIfWin()
     update()
 }
 
+function checkIfWin(){
+    if (endTarget.health <=0) {
+        endTarget.health = 0
+        win()
+    }
+}
 
+function win(){
+//    var winTitle = "<h1 class='wintext'> CONGRATULATIONS YOU HAVE WON!!!</h1>"
+    document.getElementById('win').innerText = 'CONGRATULATIONS YOU HAVE WON!!!'
+
+}
 //function to update the health info on web page.
 function update() {
     document.getElementById('healthNum').innerText = endTarget.health
@@ -49,15 +60,14 @@ function update() {
 // function to add items to be used to modify attack numbers.
 //var shield = ''
 function giveItemToTarget(atItem) {
-   endTarget.items.push(items[atItem])
-   
-    
+    endTarget.items.push(items[atItem])
+
+
 }
 
 // function to total up the attack modifiers
 function addMods() {
     var modTotal = 0
- //   debugger
     for (let i = 0; i < endTarget.items.length; i++) {
         let mod = endTarget.items[i];
         modTotal += mod.modifier
@@ -80,6 +90,5 @@ function Item(name, modifier, description) {
     this.modifier = modifier;
     this.description = description;
 }
-
 
 update()
