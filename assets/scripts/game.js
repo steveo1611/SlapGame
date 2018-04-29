@@ -1,7 +1,7 @@
 // Version:1
 
 // creates Target details: uses a constructor to setup all the targets attrubutes.
-var endTarget = new Target('Wacky', 10)
+var endTarget = new Target('Wacky', 100)
 
 //list of items that can be used to "enhance" attacks
 var items = {
@@ -78,7 +78,7 @@ function addMods() {
 }
 // function to reset game to starting defaults
 function reset(){
-   endTarget = new Target('Wacky', 10)  //bug bug when I update this on line 4 I will need to fix this also 
+   endTarget = new Target('Wacky', 100)  //bug bug: when I update this on line 4 I will need to fix this also 
    document.getElementById('win').innerText = ''
     update()
 }
