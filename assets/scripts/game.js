@@ -1,4 +1,5 @@
 // Version:1.5
+//still have a few bugs related to the entry fields and name not resetting correctly.
 
 // OLD: creates Target details: uses a constructor to setup all the targets attrubutes.
 //var endTarget = new Character('Wacky', 100)
