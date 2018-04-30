@@ -70,13 +70,13 @@
             <div class="row">
                 <form class="col" id="name-input" onsubmit="attackName(event)">
                     <h3 class="h3color"> Enter your name and chose your weapons</h3>
-                    <input type="text" name="atname" placeholder="Attacker's name" required minlength=1></input>
-                    <input type="text" name="item1" placeholder="Slap!" required minlength=1 value="Slap"></input>
-                    <input type="text" name="item2" placeholder="Punch!" required minlength=1 value="Punch"></input>
-                    <input type="text" name="item3" placeholder="Kick!" required minlength=1 value="Kick"></input>
+                    <input type="text" id="atnameid" name="atname" placeholder="Attacker's name" required minlength=1></input>
+                    <input type="text" id="item1id" name="item1" placeholder="Slap!" required minlength=1 value="Slap"></input>
+                    <input type="text" id="item2id" name="item2" placeholder="Punch!" required minlength=1 value="Punch"></input>
+                    <input type="text" id="item3id" name="item3" placeholder="Kick!" required minlength=1 value="Kick"></input>
                     <button type="submit">submit</button>
                 </form>
-                <div class="att-choice col" id="type-of-attack" style="visibility: hidden;">
+                <div class="att-choice col" id="type-of-attack" style="display: none">
                     <div class="but-box d-flex flex-column justify-content-between" id="attackType">
                         <h3 class="h3color">Type of Attack:</h3>
                         <button type="button" name="nat1" id="at1" onclick="attack1()" class="attack-type btn btn-primary">SLAP!</button>
@@ -89,7 +89,7 @@
                         <img id="tar-pic" class="crazy-pic" src="assets/images/wackedOut.jpg" alt="">
                     </div>
                 </div>
-                <form class="col" id="mod-input" onsubmit="TargetName(event)">
+                <form class="col" id="mod-input" onsubmit="targetName(event)">
                         <h3 class="h3color"> Enter the name of your target and chose your modifiers</h3>
                         <input type="text" name="modname" placeholder="Dominican Tomás de Torquemada" required minlength=1 value="Dominican Tomás de Torquemada"></input>
                         <input type="text" name="moditem1" placeholder="Rock" required minlength=1 value="Rock"></input>
@@ -97,12 +97,12 @@
                         <input type="text" name="moditem3" placeholder="Habergeon" required minlength=1 value="Habergeon"></input>
                         <button type="submit">submit</button>
                     </form>
-                <div class="mod-choice col" id="type-of-mods" style="visibility:visible;">
-                    <div class="but-box d-flex flex-column justify-content-between" id="items">
+                <div class="mod-choice col" id="type-of-mods" style="display: none">
+                    <div class="but-box d-flex flex-column justify-content-between">
                         <h3 class="h3color">Attack Modifier:</h3>
-                        <button type="button" onclick="giveItemToTarget('mod1')" class="attack-help btn btn-primary">Rock</button>
-                        <button type="button" onclick="giveItemToTarget('mod2')" class="attack-help btn btn-primary">Sling</button>
-                        <button type="button" onclick="giveItemToTarget('mod3')" class="attack-help btn btn-primary">Habergeon</button>
+                        <button type="button" name="mod1" id="mod-1" onclick="giveItemToTarget('mod1')" class="attack-help btn btn-primary">Rock</button>
+                        <button type="button" name="mod2" id="mod-2" onclick="giveItemToTarget('mod2')" class="attack-help btn btn-primary">Sling</button>
+                        <button type="button" name="mod3" id="mod-3" onclick="giveItemToTarget('mod3')" class="attack-help btn btn-primary">Habergeon</button>
                     </div>
                 </div>
             </div>
