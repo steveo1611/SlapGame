@@ -68,12 +68,20 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="att-choice col-offset-2">
+                <form class="col" id="name-input" onsubmit="attackName(event)">
+                    <h3 class="h3color"> Enter your name and chose your weapons</h3>
+                    <input type="text" name="atname" placeholder="Attacker's name" required minlength=1></input>
+                    <input type="text" name="item1" placeholder="Slap!" required minlength=1 value="Slap"></input>
+                    <input type="text" name="item2" placeholder="Punch!" required minlength=1 value="Punch"></input>
+                    <input type="text" name="item3" placeholder="Kick!" required minlength=1 value="Kick"></input>
+                    <button type="submit">submit</button>
+                </form>
+                <div class="att-choice col" id="type-of-attack" style="visibility: hidden;">
                     <div class="but-box d-flex flex-column justify-content-between" id="attackType">
-                        <h3 style="color:white">Type of Attack:</h3>
-                        <button type="button" onclick="slap()" class="attack-type btn btn-primary">SLAP!</button>
-                        <button type="button" onclick="punch()" class="attack-type btn btn-primary">Punch!</button>
-                        <button type="button" onclick="kick()" class="attack-type btn btn-primary">Kick!</button>
+                        <h3 class="h3color">Type of Attack:</h3>
+                        <button type="button" name="nat1" id="at1" onclick="attack1()" class="attack-type btn btn-primary">SLAP!</button>
+                        <button type="button" name="nat2"id="at2" onclick="attack2()" class="attack-type btn btn-primary">Punch!</button>
+                        <button type="button" name="nat3" id="at3" onclick="attack3()" class="attack-type btn btn-primary">Kick!</button>
                     </div>
                 </div>
                 <div class="col">
@@ -81,16 +89,32 @@
                         <img id="tar-pic" class="crazy-pic" src="assets/images/wackedOut.jpg" alt="">
                     </div>
                 </div>
-                <div class="att-choice col-offset-2">
+                <form class="col" id="mod-input" onsubmit="TargetName(event)">
+                        <h3 class="h3color"> Enter the name of your target and chose your modifiers</h3>
+                        <input type="text" name="modname" placeholder="Dominican Tomás de Torquemada" required minlength=1 value="Dominican Tomás de Torquemada"></input>
+                        <input type="text" name="moditem1" placeholder="Rock" required minlength=1 value="Rock"></input>
+                        <input type="text" name="moditem2" placeholder="Sling" required minlength=1 value="Sling"></input>
+                        <input type="text" name="moditem3" placeholder="Habergeon" required minlength=1 value="Habergeon"></input>
+                        <button type="submit">submit</button>
+                    </form>
+                <div class="mod-choice col" id="type-of-mods" style="visibility:visible;">
                     <div class="but-box d-flex flex-column justify-content-between" id="items">
-                            <h3 style="color:white">Attack Modifier:</h3>
-                        <button type="button" onclick="giveItemToTarget('shield')" class="attack-help btn btn-primary">Shield</button>
-                        <button type="button" onclick="giveItemToTarget('rock')" class="attack-help btn btn-primary">Rock</button>
-                        <button type="button" onclick="giveItemToTarget('fist')" class="attack-help btn btn-primary">Fist</button>
+                        <h3 class="h3color">Attack Modifier:</h3>
+                        <button type="button" onclick="giveItemToTarget('mod1')" class="attack-help btn btn-primary">Rock</button>
+                        <button type="button" onclick="giveItemToTarget('mod2')" class="attack-help btn btn-primary">Sling</button>
+                        <button type="button" onclick="giveItemToTarget('mod3')" class="attack-help btn btn-primary">Habergeon</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- BUG BUG: New code below -->
+        <!-- <form> -->
+        <!-- <form id="name-input" onsubmit="attackName(event)">
+            <input type="text" name="atname" placeholder="name" required minlength=1></input>
+            <button type="submit">submit</button>
+        </form> -->
+
+        <!-- </form> -->
     </section>
     <section>
         <footer>
