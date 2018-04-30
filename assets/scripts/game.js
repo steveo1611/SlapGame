@@ -12,6 +12,22 @@ var attacker = {}
 var items = {}
 
     
+//FEEDBACK: These could be combined into one function that takes in the property name
+// to access on your character.
+
+// character: {
+//     attacks:{
+//         attack1:{
+//             name: "Slap",
+//             damage: 1
+//         }
+//     }
+// }
+
+// function attack(attackName){
+// endTarget.health -= character.attacks[attackName].damage
+// The random damage is a cool feature, but you could still use this by supplying character.attacks[attackName].damage
+// as the maximum.
 
 // function for the first "type of attack" button: initially "slap"
 // also updates the health and the hit totals
@@ -44,6 +60,10 @@ function attack3() {
     update()
 }
 
+
+//FEEDBACK: You could also store these attacks on the character object and have the Character constructor
+// take in the attack names from the form to set the attack names on the object. Then reference those to draw
+// the buttons.
 
 // function to handle the actions when submit button pressed: attacker name input (left side)
 function attackName(event) {
@@ -93,6 +113,9 @@ function update() {
     document.getElementById('hithNum').innerText = endTarget.hits
     document.getElementById('nameID').innerText = endTarget.name
 }
+
+
+// Good job combining the give items actions into one function, see if you can do this for the attacks.
 
 // function to add items to be used to modify attack numbers.
 function giveItemToTarget(atItem) {
